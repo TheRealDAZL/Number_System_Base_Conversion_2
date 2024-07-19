@@ -106,9 +106,9 @@
                     input = input.Substring(1);
                 }
 
-                if (!(input.Contains(",") && input.Contains(".")) && (input.Contains(",") || input.Contains(".")))
+                if (!(input.Contains(".") && input.Contains(",")) && (input.Contains(".") || input.Contains(",")))
                 {
-                    char c = (input.Contains(",") ? ',' : '.');
+                    char c = (input.Contains(".") ? '.' : ',');
 
                     int index = input.IndexOf(c);
 
@@ -123,7 +123,7 @@
                     }
                 }
 
-                else if (input.Contains(",") && input.Contains("."))
+                else if (input.Contains(".") && input.Contains(","))
                 {
                     return false;
                 }
@@ -154,7 +154,6 @@
 
                     value += tempValue * Math.Pow(initialBase, exponent);
                     exponent++;
-
                 }
 
                 return true;
